@@ -1,0 +1,21 @@
+{
+    "name": "abmmhasan/di-container",
+    "description": "Simple dependency injector",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://abmmhasan.github.io/DI-Container/",
+    "authors": [
+        {
+            "name": "abmmhasan",
+            "email": "abmmhasan346@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AbmmHasan\\DIContainer\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
