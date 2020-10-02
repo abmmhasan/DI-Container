@@ -8,7 +8,7 @@ This class calls another class method, resolves constructor & method dependency 
 
 ## Prerequisits
 
-Language: PHP 7.4/+
+Language: PHP 7.0/+
 
 ## Installation
 

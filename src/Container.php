@@ -20,7 +20,7 @@ namespace AbmmHasan\DIContainer;
 class Container
 {
     private $class;
-    private array $constructorParams;
+    private $constructorParams;
 
     /**
      * Set Class & Constructor parameters.
