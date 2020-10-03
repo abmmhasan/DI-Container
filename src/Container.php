@@ -68,7 +68,7 @@ class Container
      * @return array
      * @throws \ReflectionException
      */
-    public function resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters)
+    private function resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters)
     {
         $instanceCount = 0;
         $values = array_values($parameters);
