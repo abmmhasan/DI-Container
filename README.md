@@ -39,11 +39,11 @@ class TestClass
 }
 
 /**
-* Pass the class with full namespace as first parameter
+* Pass the class as first parameter
 * In second parameter pass the value as comma separated which will be
 * resolved to class __construct
 */
-$class = new Container('TestClass',23); // TestClass: Class we resolving, 23: $id param
+$class = new Container(TestClass::class,23); // TestClass: Class we resolving, 23: $id param
 /**
 * Afterwards we call any methods of that class
 * 'getRequest()' is a method of 'TestClass' that we are calling.
@@ -75,7 +75,7 @@ class TestClass
 /**
 * Only send parameter if required
 */
-$class = new Container('TestClass'); // TestClass: Class we resolving
+$class = new Container(TestClass::class); // TestClass: Class we resolving
 /**
 * Same as above
 */
