@@ -44,6 +44,8 @@ class TestClass
 * resolved to class __construct
 */
 $class = new Container(TestClass::class,23); // TestClass: Class we resolving, 23: $id param
+// or,
+$class = initiate(TestClass::class,23);
 /**
 * Afterwards we call any methods of that class
 * 'getRequest()' is a method of 'TestClass' that we are calling.
@@ -76,6 +78,8 @@ class TestClass
 * Only send parameter if required
 */
 $class = new Container(TestClass::class); // TestClass: Class we resolving
+// or,
+$class = initiate(TestClass::class);
 /**
 * Same as above
 */

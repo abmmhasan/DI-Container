@@ -13,7 +13,10 @@
     "autoload": {
         "psr-4": {
             "AbmmHasan\\DIContainer\\": "src/DIContainer/"
-        }
+        },
+        "files": [
+            "src/function.php"
+        ]
     },
     "require": {
         "php": ">=7.0"

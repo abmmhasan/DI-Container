@@ -16,7 +16,6 @@ namespace AbmmHasan\DIContainer;
  * @copyright   Copyright (c), 2020 A. B. M. Mahmudul Hasan
  * @license     MIT public license
  */
-
 class Container
 {
     private $class;
@@ -44,20 +43,24 @@ class Container
      */
     public function __call($method, $params)
     {
-        $constructor = (new \ReflectionClass($this->class))->getConstructor();
-        if (is_null($constructor)) {
-            return (new $this->class())->$method(
+        if ($method === 'closure' && $this->class instanceof \Closure) {
+            return ($this->class)(...($this->resolveParameters(new \ReflectionFunction($this->class), $this->constructorParams)));
+        } else {
+            $constructor = (new \ReflectionClass($this->class))->getConstructor();
+            if (is_null($constructor)) {
+                return (new $this->class())->$method(
+                    ...
+                    ($this->resolveParameters(new \ReflectionMethod($this->class, $method), $params))
+                );
+            }
+            return (new $this->class(
+                ...
+                $this->resolveParameters($constructor, $this->constructorParams)
+            ))->$method(
                 ...
                 ($this->resolveParameters(new \ReflectionMethod($this->class, $method), $params))
             );
         }
-        return (new $this->class(
-            ...
-            $this->resolveParameters($constructor, $this->constructorParams)
-        ))->$method(
-            ...
-            ($this->resolveParameters(new \ReflectionMethod($this->class, $method), $params))
-        );
     }
 
     /**
@@ -68,7 +71,7 @@ class Container
      * @return array
      * @throws \ReflectionException
      */
-    public function resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters)
+    private function resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters)
     {
         $instanceCount = 0;
         $values = array_values($parameters);
