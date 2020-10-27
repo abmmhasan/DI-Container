@@ -8,6 +8,7 @@ namespace AbmmHasan\DIContainer;
 
 /**
  * The Container class can inject dependency while calling class methods (for both method & constructor)
+ * This also supports closure
  *
  * Usage examples can be found in the included README file, and all methods
  * should have adequate documentation to get you started.

@@ -4,7 +4,7 @@ use AbmmHasan\DIContainer\Container;
 
 if (!function_exists('initiate')) {
     /**
-     * Create a collection from the given value.
+     * Shortcut to DI Container, for easy access
      *
      * @param $classOrClosure
      * @param mixed ...$parameters

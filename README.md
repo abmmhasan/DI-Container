@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 
-This class calls another class method, resolves constructor & method dependency on the fly.
+This library, resolves constructor & method dependency on the fly (also for closure). Check examples below.
 
 
 ## Prerequisites
@@ -18,7 +18,7 @@ composer require abmmhasan/di-container
 
 ## Usage
 
-### Example 01
+### Example 01: With additional parameter
 
 ```php
 /**
@@ -54,7 +54,7 @@ $class = initiate(TestClass::class,23);
 $value = $class->getRequest(34,43);
 ```
 
-### Example 02
+### Example 02: Without additional parameter
 
 ```php
 /**
@@ -84,6 +84,18 @@ $class = initiate(TestClass::class);
 * Same as above
 */
 $value = $class->getRequest();
+```
+
+### Example 03: Closure
+
+```php
+$myClosure = function (Request $request, $test, $rest) {
+                     print_r($request);
+                     echo "I'm inside[$test,$rest]";
+                 };
+$class = new Container($myClosure, 23, 34); // Pass the closure
+// or,
+$class = initiate($myClosure, 23, 34);
 ```
 
 ## Support
