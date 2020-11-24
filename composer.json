@@ -18,6 +18,8 @@
             "src/function.php"
         ]
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.0"
     }
