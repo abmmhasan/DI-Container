@@ -98,6 +98,25 @@ $class = new Container($myClosure, 23, 34); // Pass the closure
 $class = initiate($myClosure, 23, 34);
 ```
 
+### Example 04: I don't need any dependency resolution
+
+```php
+/**
+* From example 02 (same for 01 but not applicable for 03: Closure)
+ */
+$class = new Container(TestClass::class); // TestClass: Class we resolving
+// or,
+$class = initiate(TestClass::class);
+/**
+* Add this additional call before doing any method call
+*/
+$class->_noInject();
+/**
+* Now do calls as usual
+ */
+$value = $class->getRequest();
+```
+
 ## Support
 
 Having trouble? Create an issue!

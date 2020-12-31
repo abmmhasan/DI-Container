@@ -10,7 +10,7 @@ if (!function_exists('initiate')) {
      * @param mixed ...$parameters
      * @return Container
      */
-    function initiate($classOrClosure, ...$parameters)
+    function initiate($classOrClosure, ...$parameters): Container
     {
         return new Container($classOrClosure, ...$parameters);
     }

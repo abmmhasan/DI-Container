@@ -113,7 +113,7 @@ class Container
      * @return array
      * @throws \ReflectionException
      */
-    private function _resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters)
+    private function _resolveParameters(\ReflectionFunctionAbstract $reflector, array $parameters): array
     {
         $instanceCount = 0;
         $values = array_values($parameters);
@@ -148,6 +148,7 @@ class Container
      * @param $parameters
      * @param $skipValue
      * @return object|null
+     * @throws \ReflectionException
      */
     private function _resolveDependency(\ReflectionParameter $parameter, $parameters, $skipValue)
     {
@@ -167,7 +168,7 @@ class Container
      * @param array $parameters
      * @return bool
      */
-    private function _alreadyExist($class, array $parameters)
+    private function _alreadyExist($class, array $parameters): bool
     {
         foreach ($parameters as $value) {
             if ($value instanceof $class) {
