@@ -168,7 +168,7 @@ class Container
      * @param array $parameters
      * @return bool
      */
-    private function _alreadyExist($class, array $parameters): bool
+    private function _alreadyExist($class, array $parameters)
     {
         foreach ($parameters as $value) {
             if ($value instanceof $class) {
