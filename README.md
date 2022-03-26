@@ -5,6 +5,9 @@
 
 This library, resolves constructor & method dependency on the fly (also for closure). Check examples below.
 
+### Repository archived/abandoned.
+
+Suggested to use https://github.com/abmmhasan/OOF instead!
 
 ## Prerequisites
 
